@@ -2,18 +2,20 @@
 <html lang="th">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>เว็บคำนวณตัวเลข</title>
+  <title>ตารางคำนวณตัวเลข</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
-    <h1>เว็บคำนวณตัวเลข</h1>
+    <h1>ตารางคำนวณตัวเลข</h1>
+
     <div class="controls">
+      <input type="text" id="searchValue" placeholder="ค้นหาเลข...">
+      <button onclick="highlightAndSum()">ค้นหา</button>
       <button onclick="addRow()">เพิ่มแถว</button>
-      <button onclick="clearTable()">ลบทั้งหมด</button>
+      <button onclick="clearTable()">เคลียร์ทั้งหมด</button>
       <button onclick="downloadCSV()">ดาวน์โหลด CSV</button>
-      <input type="file" id="upload" accept=".csv" onchange="uploadCSV(event)">
+      <input type="file" id="uploadCSV" accept=".csv" onchange="uploadCSV(event)">
     </div>
 
     <table id="dataTable">
@@ -27,16 +29,12 @@
       <tbody></tbody>
     </table>
 
-    <div class="summary">
-      <strong>ผลรวมตัวเลข:</strong> <span id="sum">0</span>
+    <div class="results">
+      <p id="sumNumbers">ผลรวมตัวเลข: 0</p>
+      <p id="sumSizes">ผลรวมขนาด: -</p>
     </div>
 
-    <div class="highlight">
-      <label>ค้นหาเลขซ้ำ:</label>
-      <input type="number" id="highlightInput" oninput="highlightDuplicates()">
-    </div>
   </div>
-
   <script src="script.js"></script>
 </body>
 </html>
