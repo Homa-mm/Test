@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>เว็บคำนวณตัวเลข</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>เว็บคำนวณตัวเลข</h1>
+    <div class="controls">
+      <button onclick="addRow()">เพิ่มแถว</button>
+      <button onclick="clearTable()">ลบทั้งหมด</button>
+      <button onclick="downloadCSV()">ดาวน์โหลด CSV</button>
+      <input type="file" id="upload" accept=".csv" onchange="uploadCSV(event)">
+    </div>
+
+    <table id="dataTable">
+      <thead>
+        <tr>
+          <th>ตัวเลข</th>
+          <th>ขนาด (WxH)</th>
+          <th>ลบ</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <div class="summary">
+      <strong>ผลรวมตัวเลข:</strong> <span id="sum">0</span>
+    </div>
+
+    <div class="highlight">
+      <label>ค้นหาเลขซ้ำ:</label>
+      <input type="number" id="highlightInput" oninput="highlightDuplicates()">
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
